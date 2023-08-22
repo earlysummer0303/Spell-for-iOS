@@ -8,28 +8,29 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var showMainPageView = false
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-                .font(.custom("S-CoreDream-3Light", size: 20))
-        }
-        .padding()
-        .onAppear {
-            for family: String in UIFont.familyNames {
-                            print(family)
-                            for names : String in UIFont.fontNames(forFamilyName: family){
-                                print("=== \(names)")
+        ZStack {
+            if showMainPageView {
+                MainPageView()
+            } else {
+                LaunchScreenView()
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                            withAnimation {
+                                showMainPageView.toggle()
                             }
                         }
+                    }
+            }
         }
     }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+    
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            ContentView()
+        }
     }
 }
