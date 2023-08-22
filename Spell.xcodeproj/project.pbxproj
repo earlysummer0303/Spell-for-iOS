@@ -14,6 +14,13 @@
 		C374AE392A94725900A1D795 /* SpellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C374AE382A94725900A1D795 /* SpellTests.swift */; };
 		C374AE432A94725900A1D795 /* SpellUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C374AE422A94725900A1D795 /* SpellUITests.swift */; };
 		C374AE452A94725900A1D795 /* SpellUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C374AE442A94725900A1D795 /* SpellUITestsLaunchTests.swift */; };
+		C374AEA02A94966800A1D795 /* SCDream6.otf in Resources */ = {isa = PBXBuildFile; fileRef = C374AE9D2A94966800A1D795 /* SCDream6.otf */; };
+		C374AEA12A94966800A1D795 /* SCDream3.otf in Resources */ = {isa = PBXBuildFile; fileRef = C374AE9E2A94966800A1D795 /* SCDream3.otf */; };
+		C374AEA22A94966800A1D795 /* SCDream5.otf in Resources */ = {isa = PBXBuildFile; fileRef = C374AE9F2A94966800A1D795 /* SCDream5.otf */; };
+		C374AEA62A9499D100A1D795 /* UIScreen+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C374AEA52A9499D100A1D795 /* UIScreen+.swift */; };
+		C374AEA82A949A8800A1D795 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C374AEA72A949A8800A1D795 /* Color+.swift */; };
+		C374AEAA2A949AC200A1D795 /* Text+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C374AEA92A949AC200A1D795 /* Text+.swift */; };
+		C374AEAC2A949D0500A1D795 /* Gradient+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C374AEAB2A949D0500A1D795 /* Gradient+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +51,14 @@
 		C374AE3E2A94725900A1D795 /* SpellUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpellUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C374AE422A94725900A1D795 /* SpellUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellUITests.swift; sourceTree = "<group>"; };
 		C374AE442A94725900A1D795 /* SpellUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C374AE9D2A94966800A1D795 /* SCDream6.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream6.otf; sourceTree = "<group>"; };
+		C374AE9E2A94966800A1D795 /* SCDream3.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream3.otf; sourceTree = "<group>"; };
+		C374AE9F2A94966800A1D795 /* SCDream5.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream5.otf; sourceTree = "<group>"; };
+		C374AEA32A94967E00A1D795 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C374AEA52A9499D100A1D795 /* UIScreen+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+.swift"; sourceTree = "<group>"; };
+		C374AEA72A949A8800A1D795 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
+		C374AEA92A949AC200A1D795 /* Text+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+.swift"; sourceTree = "<group>"; };
+		C374AEAB2A949D0500A1D795 /* Gradient+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Gradient+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +109,10 @@
 		C374AE262A94725800A1D795 /* Spell */ = {
 			isa = PBXGroup;
 			children = (
+				C374AEA42A94997A00A1D795 /* Extension+ */,
+				C374AEA32A94967E00A1D795 /* Info.plist */,
+				C374AE9C2A9495BE00A1D795 /* Fonts */,
+				C374AE9A2A9495A900A1D795 /* Extension */,
 				C374AE272A94725800A1D795 /* SpellApp.swift */,
 				C374AE292A94725800A1D795 /* ContentView.swift */,
 				C374AE2B2A94725900A1D795 /* Assets.xcassets */,
@@ -125,6 +144,34 @@
 				C374AE442A94725900A1D795 /* SpellUITestsLaunchTests.swift */,
 			);
 			path = SpellUITests;
+			sourceTree = "<group>";
+		};
+		C374AE9A2A9495A900A1D795 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		C374AE9C2A9495BE00A1D795 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C374AE9E2A94966800A1D795 /* SCDream3.otf */,
+				C374AE9F2A94966800A1D795 /* SCDream5.otf */,
+				C374AE9D2A94966800A1D795 /* SCDream6.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		C374AEA42A94997A00A1D795 /* Extension+ */ = {
+			isa = PBXGroup;
+			children = (
+				C374AEA52A9499D100A1D795 /* UIScreen+.swift */,
+				C374AEA72A949A8800A1D795 /* Color+.swift */,
+				C374AEA92A949AC200A1D795 /* Text+.swift */,
+				C374AEAB2A949D0500A1D795 /* Gradient+.swift */,
+			);
+			path = "Extension+";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +278,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C374AEA22A94966800A1D795 /* SCDream5.otf in Resources */,
+				C374AEA02A94966800A1D795 /* SCDream6.otf in Resources */,
+				C374AEA12A94966800A1D795 /* SCDream3.otf in Resources */,
 				C374AE2F2A94725900A1D795 /* Preview Assets.xcassets in Resources */,
 				C374AE2C2A94725900A1D795 /* Assets.xcassets in Resources */,
 			);
@@ -258,6 +308,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C374AE2A2A94725800A1D795 /* ContentView.swift in Sources */,
+				C374AEA82A949A8800A1D795 /* Color+.swift in Sources */,
+				C374AEA62A9499D100A1D795 /* UIScreen+.swift in Sources */,
+				C374AEAC2A949D0500A1D795 /* Gradient+.swift in Sources */,
+				C374AEAA2A949AC200A1D795 /* Text+.swift in Sources */,
 				C374AE282A94725800A1D795 /* SpellApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,6 +474,7 @@
 				DEVELOPMENT_TEAM = G8XX337GMH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Spell/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -449,6 +504,7 @@
 				DEVELOPMENT_TEAM = G8XX337GMH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Spell/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
