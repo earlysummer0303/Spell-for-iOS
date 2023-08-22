@@ -14,6 +14,11 @@ extension Image {
         case crystalBall_0, crystalBall_1, crystalBall_2, crystalBall_3, crystalBall_4
         case test
         case noSpellYet
+        case mainTab
+        case myTab
+        case mainTabDisabled
+        case myTabDisabled
+        case tabBarShape
     }
     init(_ name: ImageAssetName){
         self.init(name.rawValue)

@@ -29,17 +29,14 @@ struct LaunchScreenView: View {
                         .resizable()
                         .frame(width: UIScreen.getWidth(111), height: UIScreen.getWidth(48))
                         .padding()
-                        .onAppear {
-                            
-                        }
                 }
             }
         }
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now()+1 , execute: {
+            DispatchQueue.main.asyncAfter(deadline: .now()+0.1 , execute: {
                 withAnimation { isLoading.toggle() }
             })
-    }
+        }
     }
 }
 

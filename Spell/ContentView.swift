@@ -9,18 +9,18 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var showMainPageView = false
+    @State private var showRootView = false
     
     var body: some View {
         ZStack {
-            if showMainPageView {
-                MainPageView()
+            if showRootView {
+                RootTabView()
             } else {
                 LaunchScreenView()
                     .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                             withAnimation {
-                                showMainPageView.toggle()
+                                showRootView.toggle()
                             }
                         }
                     }
