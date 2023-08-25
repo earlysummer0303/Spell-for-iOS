@@ -12,36 +12,57 @@ struct MainPageView: View {
     
     var body: some View {
         ZStack {
-                Color.bgColor.ignoresSafeArea()
-                ScrollView(showsIndicators: false) {
-                    VStack(spacing: 0) {
-                        Text("Do your spells")
-                            .h1Font()
+            Color.bgColor.ignoresSafeArea()
+            ScrollView(showsIndicators: false) {
+                VStack(spacing: 0) {
+                    Text("Do your spells")
+                        .h1Font()
+                        .foregroundColor(.white)
+                    Image(.crystalBall_0)
+                        .resizable()
+                        .frame(width: UIScreen.getWidth(390), height: UIScreen.getWidth(390))
+                        .padding(.top, UIScreen.getHeight(36))
+                    HStack {
+                        Text("Today's spells")
+                            .h3Font()
                             .foregroundColor(.white)
-                        Image(.crystalBall_0)
-                            .resizable()
-                            .frame(width: UIScreen.getWidth(390), height: UIScreen.getWidth(390))
-                            .padding(.top, UIScreen.getHeight(36))
-                        HStack {
-                            Text("Today's spells")
-                                .h3Font()
-                            .foregroundColor(.white)
-                            Spacer()
-                        }
-                        .padding(.horizontal, UIScreen.getWidth(20))
-                        .padding(.top, UIScreen.getHeight(64))
-                        Image(.noSpellYet)
-                            .padding(.top, UIScreen.getHeight(65))
-                        Text("No spells yet")
-                            .b1Font()
-                            .foregroundColor(.g3Color)
-                            .padding(.top, UIScreen.getHeight(30))
+                        Spacer()
                     }
-                    .padding(.top, UIScreen.getHeight(98))
+                    .padding(.horizontal, UIScreen.getWidth(20))
+                    .padding(.top, UIScreen.getHeight(64))
+                    Image(.noSpellYet)
+                        .padding(.top, UIScreen.getHeight(65))
+                    Text("No spells yet")
+                        .b1Font()
+                        .foregroundColor(.g3Color)
+                        .padding(.top, UIScreen.getHeight(30))
+                    NavigationLink(destination: {
+                        SellectSpellView()
+                    }, label: {
+                        Capsule()
+                            .fill(Gradient.ctaVerticalGradient)
+                            .frame(width: 148, height: 40)
+                            .overlay(
+                                Capsule()
+                                    .stroke(Gradient.whiteGradient, lineWidth: 1.5)
+                                    .frame(width: 148, height: 40)
+                            )
+                            .overlay(
+                                Text("Sellect spells")
+                                    .foregroundColor(.bgColor)
+                                    .b2Font()
+                            )
+                        
+                    })
+                    .padding(.top, 34)
+                    .padding(.bottom, 140)
                 }
+                .padding(.top, UIScreen.getHeight(98))
             }
+            backgroundGradientView()
         }
     }
+}
     
 
 

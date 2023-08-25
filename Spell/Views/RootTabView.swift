@@ -15,30 +15,45 @@ struct RootTabView: View {
     @State private var currentTab = TabBarTags.mainPage
     
     var body: some View {
-        ZStack {
-            TabView(selection: $currentTab) {
-                MainPageView()
-                    .tag(TabBarTags.mainPage)
-                    .setTabBarVisibility(isHidden: true)
-                MypageView()
-                    .tag(TabBarTags.myPage)
+        NavigationStack {
+            ZStack {
+                TabView(selection: $currentTab) {
+                    MainPageView()
+                        .tag(TabBarTags.mainPage)
+                        .setTabBarVisibility(isHidden: true)
+                    MypageView()
+                        .tag(TabBarTags.myPage)
+                }
+                tabBarAndButton
             }
-            tabBarAndButton
         }
     }
     
     private var tabBarAndButton: some View {
         VStack {
             Spacer()
-            ZStack { // Button + TabBar
-                customTabBar
+            ZStack(alignment: .top) { // Button + TabBar
+                VStack {
+                    Rectangle()
+                        .fill(Color.clear)
+                        .frame(width: UIScreen.getWidth(277), height: UIScreen.getHeight(10))
+                    customTabBar
+                }
+                Button(action: {
+                    
+                }){
+                    Image(.plusGradientButton)
+                        .resizable()
+                        .frame(width: UIScreen.getHeight(53), height: UIScreen.getHeight(53))
+                }
             }
         }
     }
     
     private var customTabBar: some View {
-        ZStack { // TabBar 버튼들 + Shape
+        ZStack(alignment: .leading) { // TabBar 버튼들 + Shape
             Image(.tabBarShape)
+                .resizable()
                 .frame(width: UIScreen.getWidth(277), height: UIScreen.getWidth(62))
             HStack() {
                 RoundedRectangle(cornerRadius: 31)
@@ -46,6 +61,7 @@ struct RootTabView: View {
                     .frame(width: UIScreen.getWidth(101), height: UIScreen.getWidth(62))
                     .overlay (
                         Image(currentTab == .mainPage ? .mainTab : .mainTabDisabled)
+                            .resizable()
                             .frame(width: UIScreen.getWidth(30), height: UIScreen.getWidth(30))
                     )
                     .onTapGesture {
@@ -57,6 +73,7 @@ struct RootTabView: View {
                     .frame(width: UIScreen.getWidth(101), height: UIScreen.getWidth(62))
                     .overlay (
                         Image(currentTab == .myPage ? .myTab : .myTabDisabled)
+                            .resizable()
                             .frame(width: UIScreen.getWidth(30), height: UIScreen.getWidth(30))
                     )
                     .onTapGesture {

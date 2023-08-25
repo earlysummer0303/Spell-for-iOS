@@ -19,6 +19,8 @@ extension Image {
         case mainTabDisabled
         case myTabDisabled
         case tabBarShape
+        case plusGradientButton
+        case trashBin
     }
     init(_ name: ImageAssetName){
         self.init(name.rawValue)
