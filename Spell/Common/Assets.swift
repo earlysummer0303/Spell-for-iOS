@@ -7,11 +7,12 @@
 
 import SwiftUI
 
+
 extension Image {
     enum ImageAssetName: String {
         case launchScreenGradient
         case textLogo
-        case crystalBall_0, crystalBall_1, crystalBall_2, crystalBall_3, crystalBall_4
+        case crystalBall_0, crystalBall_1, crystalBall_2, crystalBall_3, crystalBall_4, crystalBall_5
         case test
         case noSpellYet
         case mainTab
@@ -21,7 +22,9 @@ extension Image {
         case tabBarShape
         case plusGradientButton
         case trashBin
+        case editIcon
     }
+    
     init(_ name: ImageAssetName){
         self.init(name.rawValue)
     }

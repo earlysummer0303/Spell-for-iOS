@@ -29,7 +29,12 @@
 		C374AEC22A952D0B00A1D795 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C374AEC12A952D0B00A1D795 /* RootTabView.swift */; };
 		C374AEC42A952E6400A1D795 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C374AEC32A952E6400A1D795 /* View+.swift */; };
 		C374AEC62A9541DA00A1D795 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C374AEC52A9541DA00A1D795 /* BackgroundView.swift */; };
-		C374AEC82A9543AD00A1D795 /* SellectSpellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C374AEC72A9543AD00A1D795 /* SellectSpellView.swift */; };
+		C374AEC82A9543AD00A1D795 /* SelectSpellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C374AEC72A9543AD00A1D795 /* SelectSpellView.swift */; };
+		C39BFC7F2A9B3E63009E8BBC /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39BFC7E2A9B3E63009E8BBC /* Array+.swift */; };
+		C39BFC812A9B4563009E8BBC /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39BFC802A9B4563009E8BBC /* Components.swift */; };
+		C39BFC842A9C7148009E8BBC /* SpellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39BFC832A9C7148009E8BBC /* SpellModel.swift */; };
+		C39BFC862A9C718C009E8BBC /* SelectSpellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39BFC852A9C718C009E8BBC /* SelectSpellViewModel.swift */; };
+		C39BFC8B2A9DDCFB009E8BBC /* FinalSpellListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39BFC8A2A9DDCFB009E8BBC /* FinalSpellListView.swift */; };
 		C39F8D492A95E496007B6632 /* InputModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39F8D482A95E496007B6632 /* InputModalView.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,7 +82,12 @@
 		C374AEC12A952D0B00A1D795 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
 		C374AEC32A952E6400A1D795 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		C374AEC52A9541DA00A1D795 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
-		C374AEC72A9543AD00A1D795 /* SellectSpellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellectSpellView.swift; sourceTree = "<group>"; };
+		C374AEC72A9543AD00A1D795 /* SelectSpellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSpellView.swift; sourceTree = "<group>"; };
+		C39BFC7E2A9B3E63009E8BBC /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
+		C39BFC802A9B4563009E8BBC /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		C39BFC832A9C7148009E8BBC /* SpellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellModel.swift; sourceTree = "<group>"; };
+		C39BFC852A9C718C009E8BBC /* SelectSpellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSpellViewModel.swift; sourceTree = "<group>"; };
+		C39BFC8A2A9DDCFB009E8BBC /* FinalSpellListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalSpellListView.swift; sourceTree = "<group>"; };
 		C39F8D482A95E496007B6632 /* InputModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputModalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +139,8 @@
 		C374AE262A94725800A1D795 /* Spell */ = {
 			isa = PBXGroup;
 			children = (
+				C39BFC872A9C7A3F009E8BBC /* ViewModel */,
+				C39BFC822A9C7138009E8BBC /* Models */,
 				C374AEB02A94D34100A1D795 /* Views */,
 				C374AEAD2A94C9BB00A1D795 /* Common */,
 				C374AEA42A94997A00A1D795 /* Extension+ */,
@@ -193,6 +205,7 @@
 				C374AEA92A949AC200A1D795 /* Text+.swift */,
 				C374AEAB2A949D0500A1D795 /* Gradient+.swift */,
 				C374AEC32A952E6400A1D795 /* View+.swift */,
+				C39BFC7E2A9B3E63009E8BBC /* Array+.swift */,
 			);
 			path = "Extension+";
 			sourceTree = "<group>";
@@ -203,6 +216,7 @@
 				C374AEAE2A94C9CF00A1D795 /* Assets.swift */,
 				C374AEBD2A951A3F00A1D795 /* TabBarAccessor.swift */,
 				C374AEC52A9541DA00A1D795 /* BackgroundView.swift */,
+				C39BFC802A9B4563009E8BBC /* Components.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -214,10 +228,27 @@
 				C374AEB32A94D6A200A1D795 /* MainPageView.swift */,
 				C374AEB52A94EC6A00A1D795 /* MypageView.swift */,
 				C374AEC12A952D0B00A1D795 /* RootTabView.swift */,
-				C374AEC72A9543AD00A1D795 /* SellectSpellView.swift */,
+				C374AEC72A9543AD00A1D795 /* SelectSpellView.swift */,
 				C39F8D482A95E496007B6632 /* InputModalView.swift */,
+				C39BFC8A2A9DDCFB009E8BBC /* FinalSpellListView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		C39BFC822A9C7138009E8BBC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C39BFC832A9C7148009E8BBC /* SpellModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C39BFC872A9C7A3F009E8BBC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C39BFC852A9C718C009E8BBC /* SelectSpellViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,18 +385,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				C374AE2A2A94725800A1D795 /* ContentView.swift in Sources */,
+				C39BFC842A9C7148009E8BBC /* SpellModel.swift in Sources */,
 				C374AEAF2A94C9CF00A1D795 /* Assets.swift in Sources */,
 				C374AEA82A949A8800A1D795 /* Color+.swift in Sources */,
-				C374AEC82A9543AD00A1D795 /* SellectSpellView.swift in Sources */,
+				C374AEC82A9543AD00A1D795 /* SelectSpellView.swift in Sources */,
+				C39BFC8B2A9DDCFB009E8BBC /* FinalSpellListView.swift in Sources */,
 				C374AEA62A9499D100A1D795 /* UIScreen+.swift in Sources */,
 				C374AEAC2A949D0500A1D795 /* Gradient+.swift in Sources */,
 				C374AEBE2A951A3F00A1D795 /* TabBarAccessor.swift in Sources */,
+				C39BFC812A9B4563009E8BBC /* Components.swift in Sources */,
 				C39F8D492A95E496007B6632 /* InputModalView.swift in Sources */,
 				C374AEAA2A949AC200A1D795 /* Text+.swift in Sources */,
 				C374AE282A94725800A1D795 /* SpellApp.swift in Sources */,
 				C374AEC42A952E6400A1D795 /* View+.swift in Sources */,
 				C374AEB22A94D3F700A1D795 /* LaunchScreenView.swift in Sources */,
+				C39BFC862A9C718C009E8BBC /* SelectSpellViewModel.swift in Sources */,
 				C374AEC62A9541DA00A1D795 /* BackgroundView.swift in Sources */,
+				C39BFC7F2A9B3E63009E8BBC /* Array+.swift in Sources */,
 				C374AEB42A94D6A200A1D795 /* MainPageView.swift in Sources */,
 				C374AEC22A952D0B00A1D795 /* RootTabView.swift in Sources */,
 				C374AEB62A94EC6A00A1D795 /* MypageView.swift in Sources */,

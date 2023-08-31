@@ -10,6 +10,7 @@ import SwiftUI
 struct InputModalView: View {
     
     @Environment(\.dismiss) var dismiss
+    
     @State var textFieldText: String = ""
     @State var userInput: String = ""
     @Binding var appendList: [Spell]
@@ -28,22 +29,11 @@ struct InputModalView: View {
                     .background(Color.g2Color)
                     .cornerRadius(10)
                     .padding(.top, 24)
-                Button(action: {
+                ctaGradientButton(title: "Add") {
                     // inputText Binding
                     userInput = textFieldText
                     appendList.append(Spell(message: userInput, isDefault: false, isSelected: false))
                     dismiss()
-                }){
-                    RoundedRectangle(cornerRadius: 20)
-                        .fill(
-                            Gradient.ctaVerticalGradient
-                        )
-                        .frame(height: 56)
-                        .overlay(
-                            Text("Add")
-                                .foregroundColor(.bgColor)
-                                .b1Font()
-                        )
                 }
                 .padding(.top, 22)
                 .disabled(textFieldText.isEmpty)
@@ -55,7 +45,9 @@ struct InputModalView: View {
     }
 }
 
+
 //struct InputModalView_Previews: PreviewProvider {
+//    
 //    static var previews: some View {
 //        InputModalView()
 //    }
