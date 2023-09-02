@@ -11,13 +11,25 @@ func ctaGradientButton(title: String, action: @escaping ()->Void, isDisabled: Bo
     Button(action: action){
         RoundedRectangle(cornerRadius: 20)
             .fill(
-                isDisabled ? Gradient.lineVerticalGradient : Gradient.ctaVerticalGradient
+                isDisabled ? Gradient.ctaVerticalGradientDisabled : Gradient.ctaVerticalGradient
             )
             .frame(height: 56)
             .overlay(
                 Text(title)
-                    .foregroundColor(isDisabled ? .g3Color : .bgColor)
+                    .foregroundColor(.bgColor)
                     .b1Font()
             )
     }
+}
+
+func navigationBackButtonHeaderLabel() -> some View {
+    HStack {
+        Image(systemName: "chevron.left")
+            .foregroundColor(.white)
+            .font(.system(size: UIScreen.getWidth(24), weight: .medium))
+        Spacer()
+    }
+    .padding(.horizontal, 20)
+    .padding(.top, 12)
+    .padding(.bottom, 17)
 }

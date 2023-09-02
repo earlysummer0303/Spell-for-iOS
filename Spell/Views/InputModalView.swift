@@ -11,6 +11,9 @@ struct InputModalView: View {
     
     @Environment(\.dismiss) var dismiss
     
+    private let placeHolder = "30 characters or less"
+    private let letterLimit = 30
+    @State private var isOverLetterLimit = false
     @State var textFieldText: String = ""
     @State var userInput: String = ""
     @Binding var appendList: [Spell]
@@ -22,13 +25,27 @@ struct InputModalView: View {
                 Text("Add your own")
                     .foregroundColor(.white)
                     .cap1Font()
-                TextField("30 characters or less", text: $textFieldText)
-                    .padding(.horizontal, 12)
-                    .padding(.vertical, 15)
-                    .foregroundColor(.white)
-                    .background(Color.g2Color)
-                    .cornerRadius(10)
-                    .padding(.top, 24)
+                ZStack(alignment: .leading) {
+                    TextField("", text: $textFieldText)
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 15)
+                        .foregroundColor(.white)
+                        .background(Color.g2Color)
+                        .cornerRadius(10)
+                        .onReceive(textFieldText.publisher.collect()) { collectionText in
+                            let trimmedText = String(collectionText.prefix(letterLimit))
+                            if textFieldText != trimmedText {
+                                isOverLetterLimit = textFieldText.count > letterLimit ? true : false
+                                textFieldText = trimmedText
+                            }
+                        }
+                    Text(placeHolder)
+                        .cap3Font()
+                        .foregroundColor(.g3Color)
+                        .opacity(textFieldText.isEmpty ? 1 : 0)
+                        .padding(.leading, 12)
+                }
+                .padding(.top, 24)
                 ctaGradientButton(title: "Add") {
                     // inputText Binding
                     userInput = textFieldText
@@ -43,6 +60,21 @@ struct InputModalView: View {
             .padding(.top, 24)
         }
     }
+}
+
+extension InputModalView {
+    
+    // placeHolder 색상을 커스텀하게 바꾸기 위한 extension
+    func placeholder<Content: View>(
+         when shouldShow: Bool,
+         alignment: Alignment = .leading,
+         @ViewBuilder placeholder: () -> Content) -> some View {
+
+         ZStack(alignment: alignment) {
+             placeholder().opacity(shouldShow ? 1 : 0)
+             self
+         }
+     }
 }
 
 

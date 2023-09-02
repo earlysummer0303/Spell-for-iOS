@@ -24,6 +24,10 @@ extension Gradient {
         Color(#colorLiteral(red: 0.9803921569, green: 0.937254902, blue: 0.9333333333, alpha: 1)), Color(#colorLiteral(red: 0.9294117647, green: 0.7176470588, blue: 0.7647058824, alpha: 1)), Color(#colorLiteral(red: 0.5529411765, green: 0.4117647059, blue: 0.8823529412, alpha: 1))
     ]), startPoint: .trailing, endPoint: .leading)
     
+    static let ctaVerticalGradientDisabled = LinearGradient(gradient: Gradient(colors: [
+        Color(#colorLiteral(red: 0.9803921569, green: 0.937254902, blue: 0.9333333333, alpha: 1)).opacity(0.4), Color(#colorLiteral(red: 0.9294117647, green: 0.7176470588, blue: 0.7647058824, alpha: 1)).opacity(0.4), Color(#colorLiteral(red: 0.5529411765, green: 0.4117647059, blue: 0.8823529412, alpha: 1)).opacity(0.4)
+    ]), startPoint: .trailing, endPoint: .leading)
+    
     static let whiteGradient = LinearGradient(gradient: Gradient(colors: [
         Color.white.opacity(0.6), Color.white.opacity(0.3)
     ]), startPoint: .top, endPoint: .bottom)

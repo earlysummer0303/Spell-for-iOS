@@ -10,7 +10,7 @@ import SwiftUI
 struct SelectSpellView: View {
     
     //vm - @EnvironmentObject로 App 파일에 생성된 ViewModel 인스턴스를 불러와서 사용.
-    
+    @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
     @EnvironmentObject var vm: SelectSpellViewModel
     
     @State var showInputSheet = false
@@ -20,7 +20,14 @@ struct SelectSpellView: View {
     var body: some View {
         ZStack {
             backgroundColorView()
+                .navigationBarBackButtonHidden(true)
+                .navigationBarHidden(true)
             VStack(spacing: 0) {
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }, label: {
+                    navigationBackButtonHeaderLabel()
+                })
                 Text("Select your spells")
                     .h5Font()
                     .foregroundColor(.white)
@@ -47,7 +54,7 @@ struct SelectSpellView: View {
                             }
                         }
                 }
-                .padding(.vertical)
+            
                 .scrollContentBackground(.hidden)
                 .environment(\.defaultMinListRowHeight, 52)
                 ctaGradientButton(title: "Select", isDisabled: vm.selectedSpellList.isEmpty) {
@@ -68,6 +75,7 @@ struct SelectSpellView: View {
             }
             Button("Yes", role: .cancel) {
                 vm.sendFinalListData()
+                presentationMode.wrappedValue.dismiss()
             }
         }
     }

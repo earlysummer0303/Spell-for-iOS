@@ -5,9 +5,9 @@ import SwiftUI
 class SelectSpellViewModel : ObservableObject {
     
     // UserDefault Keys
-    let listKey = "global_spell_list"
-    let selectedListKey = "global_selected_spell_list"
-    let finalListKey = "global_final_selected_spell_list"
+    private let listKey = "global_spell_list"
+    private let selectedListKey = "global_selected_spell_list"
+    private let finalListKey = "global_final_selected_spell_list"
     
     @Published var spellList: [Spell] = [
         Spell(message: "I am an irreplaceable person", isDefault: true, isSelected: false),
@@ -55,9 +55,10 @@ class SelectSpellViewModel : ObservableObject {
     func deleteCustomSpell(indeset: IndexSet) {
         // 만약 지우려는 cell이 selected 된 경우, 이를 selectedList에서 먼저 지워줘야.
         for index in indeset {
-            guard let idx = selectedSpellList.lastIndex(of: spellList[index].message) else { return }
-            print("delete => \(idx)")
-            selectedSpellList.remove(at: idx)
+            if let idx = selectedSpellList.lastIndex(of: spellList[index].message) {
+                print("delete => \(idx)")
+                selectedSpellList.remove(at: idx)
+            }
         }
         spellList.remove(atOffsets: indeset)
         print(selectedSpellList)
